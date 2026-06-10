@@ -4,7 +4,7 @@
 **Stack:** n8n (self-hosted) · Claude API · Telegram Bot API · Supabase
 **Pattern:** Tier 0 — Single agent + tools
 
-![A real daily report delivered to Telegram: yesterday's spend, leads, CPL/CPC and month-to-date totals, followed by an AI-generated narrative analysis (in Portuguese). Client name omitted.](assets/daily-report.png)
+![Real output in Telegram. Left: the daily report — spend, leads, CPL/CPC, month-to-date totals and an AI-generated narrative analysis (in Portuguese). Right: when yesterday's data is missing, the agent sends an alert with the probable cause it inferred (a payment failure on the ad platform). Client name redacted.](assets/daily-report.png)
 
 ---
 
