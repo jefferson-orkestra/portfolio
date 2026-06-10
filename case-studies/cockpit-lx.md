@@ -4,6 +4,8 @@
 **Stack:** n8n (self-hosted) · Telegram Bot API · Telegram Mini App · multiple real-time data sources
 **Pattern:** Tier 1 — Multi-source data pipeline + real-time delivery
 
+![The Cockpit LX dashboard — five screens (Today, Map, Cruises, Weather, Alerts) delivered as a Telegram Mini App.](assets/cockpit-lx-screens.png)
+
 ---
 
 ## Problem
@@ -35,7 +37,9 @@ Drivers had no centralised source for this information. Each variable required a
   └─ Event summary
 ```
 
-**Deterministic pipeline (no LLM):** data aggregation and condition evaluation are rule-based — low latency, no API cost per alert. The LLM is reserved for cases that require interpretation; this pattern does not.
+![The production traffic-alerts workflow in n8n: scheduled trigger → fetch news/RSS → filter with AI (Claude Haiku) → process → dedupe in Supabase → quiet-hours gate → deliver to Telegram.](assets/cockpit-lx-n8n-pipeline.png)
+
+**Right tool per layer:** zone, cruise, and weather data are aggregated deterministically — rule-based, low-latency, no per-event LLM cost. For the noisier **alerts** feed, an LLM (Claude Haiku) filters raw news/RSS into genuinely driver-relevant items — interpretation a fixed rule handles poorly. Deduplication (Supabase) and a quiet-hours gate prevent alert fatigue before anything reaches the group.
 
 **Delivery:** a Telegram group message with an inline button opens the Mini App dashboard directly within Telegram — no separate app install required.
 
@@ -68,6 +72,6 @@ Drivers had no centralised source for this information. Each variable required a
 
 ## What this demonstrates
 
-A deterministic multi-source aggregation pipeline with real-time push delivery — no LLM required. It proves that agentic infrastructure means choosing the right tool for each layer, not applying AI uniformly.
+A multi-source aggregation pipeline with real-time push delivery, where each layer uses the right tool: deterministic rules for structured data (zones, cruises, weather), and an LLM only where interpretation pays off (filtering noisy news into relevant alerts). It proves that agentic infrastructure means matching the tool to the problem — not applying AI uniformly.
 
 The **Telegram Mini App pattern**: operational dashboards deployed inside an existing communication channel, eliminating adoption friction entirely.
