@@ -4,6 +4,8 @@
 **Stack:** n8n (self-hosted) · Claude API · Telegram Bot API · Supabase
 **Pattern:** Tier 0 — Single agent + tools
 
+![A real daily report delivered to Telegram: yesterday's spend, leads, CPL/CPC and month-to-date totals, followed by an AI-generated narrative analysis (in Portuguese). Client name omitted.](assets/daily-report.png)
+
 ---
 
 ## Problem
@@ -27,6 +29,8 @@ The core issue: a human was doing work that required no judgment — only data r
         ↓
 [Telegram Bot — deliver to client's private channel]
 ```
+
+![The production pipeline in n8n: a 09:00 trigger reads the day's data; if yesterday's data is missing it sends an alert (a payment-failure detection), otherwise the AI agent (Claude) summarises the metrics, flags anomalies, and delivers the report to Telegram. Recipient name redacted.](assets/daily-workflow.png)
 
 A single-agent pipeline: deterministic data retrieval plus an agentic reasoning layer (Claude API) for anomaly detection and narrative generation. No human in the loop for routine execution.
 
