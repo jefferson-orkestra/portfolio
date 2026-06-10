@@ -4,6 +4,8 @@
 **Stack:** n8n (self-hosted) · Claude API · Evolution API (WhatsApp Business) · Google Calendar API · Supabase
 **Pattern:** Tier 1 — Sequential pipeline, multi-tenant
 
+![Automated messages: the D-1 reminder (left) and the D+1 follow-up with review request (right), generated in the client's language. Personal data redacted for privacy.](assets/whatsapp-messages.png)
+
 ---
 
 ## Problem
@@ -35,6 +37,8 @@ Both tasks require no judgment — only scheduling, personalisation, and languag
         ↓
 [n8n — handler for incoming WhatsApp replies]
 ```
+
+![The production pipeline in n8n: scheduled trigger → fetch bookings (Google Calendar) → generate a personalised message with the AI agent (Claude) → send via WhatsApp Business → log the send. The same structure runs for both the D-1 reminder (17:00) and the D+1 follow-up (09:00).](assets/whatsapp-pipeline.png)
 
 **Multi-tenant architecture:** a single workflow set serves all operator tenants. Client configuration lives in a database table — adding a new operator requires only a new row, no code changes.
 
