@@ -4,7 +4,22 @@
 **Stack:** Next.js 15 (PWA) · Supabase · n8n (self-hosted) · Claude API · Evolution API (WhatsApp Business) · Google Calendar API
 **Pattern:** AI Operating System — Design · Build · Embed
 
-![The Live Portugal cockpit: the daily home (left), the AI weekly roster that reads a photo of the schedule grid (center), and a booking detail (right).](assets/live-portugal-hoje.png)
+<p align="center">
+  <img src="assets/live-portugal-splash.png" width="32%" alt="Splash — Live Portugal AI OS" />
+  <img src="assets/live-portugal-hoje.png" width="32%" alt="Hoje — daily cockpit" />
+</p>
+<p align="center">
+  <img src="assets/live-portugal-escala.png" width="24%" alt="Escala — AI reads the schedule photo" />
+  <img src="assets/live-portugal-drivers.png" width="24%" alt="Drivers — live availability" />
+  <img src="assets/live-portugal-envios.png" width="24%" alt="Envios — WhatsApp send queue" />
+  <img src="assets/live-portugal-reserva.png" width="24%" alt="Reserva — booking detail" />
+</p>
+<p align="center">
+  <img src="assets/live-portugal-calendario.png" width="24%" alt="Calendário — week view" />
+  <img src="assets/live-portugal-definicoes.png" width="24%" alt="Definições — integrations" />
+  <img src="assets/live-portugal-mais.png" width="24%" alt="Mais — menu" />
+  <img src="assets/live-portugal-driver-perfil.png" width="24%" alt="Driver profile" />
+</p>
 
 ---
 
@@ -26,13 +41,6 @@ An AI OS embedded into the operation — an installable, mobile-first PWA backof
 - **Send queue (Envios)** — driver briefings, D-1 reminders, and D+1 review requests, each one tap to WhatsApp.
 - **Multilingual WhatsApp pipeline** — n8n + Claude generate personalised D-1/D+1 messages in the client's language (PT/EN/ES/DE/FR), delivered via WhatsApp Business, logged to Supabase.
 - **Native on the phone** — installs and runs as a real full-screen app on the operator's smartphone.
-
-<p align="center">
-  <img src="assets/live-portugal-escala.png" width="24%" alt="Escala — AI reads the schedule photo and assigns tuks" />
-  <img src="assets/live-portugal-drivers.png" width="24%" alt="Drivers — live availability" />
-  <img src="assets/live-portugal-envios.png" width="24%" alt="Envios — WhatsApp send queue" />
-  <img src="assets/live-portugal-reserva.png" width="24%" alt="Reserva — booking detail" />
-</p>
 
 ---
 
