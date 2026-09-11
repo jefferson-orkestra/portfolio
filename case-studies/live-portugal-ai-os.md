@@ -1,104 +1,131 @@
-# Live Portugal — the system that runs the day
+# Live Portugal: the system that runs the day
 
-**Status:** In production every day since May 2026 · **Domain:** Tour operations — Lisbon, Portugal
+**Status:** in production every day since May 2026 · **Domain:** tour operations, Lisbon, Portugal
 **Stack:** Next.js 15 (PWA) · TypeScript · Supabase · n8n (self-hosted) · Claude API · WhatsApp Business · Google Calendar API
 
 > **Full disclosure:** I am employed by this company. I built the system it runs on and I use it every day, so I live with its failures. Most engineers hand over and leave; I stayed and watched what broke.
 
-**Measured:** 6 hours of manual work removed per week · first customer response down from about 2 hours to under 1 minute · 279 of 281 messages delivered (99.3%) across 6 languages · 6,183 bookings synced · 83 driver dispatches across 76 tours · about 180 customer touchpoints a month.
+**Measured (August 2026, this operator only):** around **20 hours of manual work removed per month**, across messaging, dispatch, the weekly schedule and the books · **414 messages** sent in six languages, **404 delivered** · **6,499 bookings** synced. The manager reviews and dispatches; nothing leaves without a person.
 
-<p align="center">
-  <img src="assets/live-portugal-splash.png" width="30%" alt="Splash screen, in the operator's own brand" />
-  <img src="assets/live-portugal-hoje.png" width="30%" alt="Hoje — the daily cockpit" />
-</p>
-<p align="center"><em>The operator's own brand — and the daily cockpit behind it.</em></p>
+The screenshots below are from the demo tenant: same software, synthetic names.
 
 ---
 
 ## The problem
 
-Live Portugal runs daily tuk-tuk tours across Lisbon for international clients. The whole operation lived in disconnected tools and in people's heads: bookings in Google Calendar, driver coordination over WhatsApp, the weekly roster on a printed grid taped to a wall, and reminders and reviews typed one by one in six languages. There was no single place to see the day — and the work that needed no judgment was eating the operator's hours.
+Live Portugal runs daily tuk-tuk tours across Lisbon for international clients. The whole day lived in disconnected tools and in people's heads. Bookings in Google Calendar. Driver coordination over WhatsApp. The week built by hand in a spreadsheet, exported as a picture and posted in the drivers' group. The accounts in other spreadsheets. Customer reminders typed one at a time, in six languages, by copying each booking into ChatGPT and pasting the answer into WhatsApp.
 
-The goal was not one automation. It was the software the business opens every morning: one place to run the day, with the machine doing the repetitive work and the people deciding direction.
+None of that work needed judgment. It was eating the managers' hours anyway.
+
+The goal was not one automation. It was the software the business opens every morning: one place to run the day, with the machine doing the repetitive part and the people deciding direction.
 
 ---
 
-## What I built
+## Four tasks, four before-and-afters
 
-An installable, mobile-first PWA backoffice running under the operator's own brand, backed by scheduled workflows. Below, the pieces, in the order the operator meets them through the day.
+I measured the operation task by task. Each task below has its own number, and the four add up to the twenty hours.
 
-## See the day, drill into a booking
+### 1 · Customer messages · about 6 hours a month back
 
-The cockpit opens on today: confirmed vs. unassigned tours, a send-queue nudge, and driver assignment in two taps. A week view gives the shape of the days ahead; tapping any tour opens the full booking — pickup, pax, client, and the assigned driver.
+**Before:** five, ten, fifteen times a day someone copied a booking out of the calendar and into ChatGPT: name, pax, language, pick-up, time; then the right template out of a dozen; then WhatsApp, the number, paste, send. And again the next day for yesterday's customers, to ask for a review.
 
-<p align="center">
-  <img src="assets/live-portugal-calendario.png" width="30%" alt="Calendário — the week at a glance" />
-  <img src="assets/live-portugal-reserva.png" width="30%" alt="Reserva — full booking detail" />
-</p>
+**Now:** the system reads the calendar itself and writes every message in the client's language: the D-1 reminder, the D+1 review request, the driver's briefing. Over a hundred a month land in a queue, ready.
 
-## The standout — reading the roster from a photograph
+**Sending is one tap, on purpose.** An automated send from the company's main number risked a ban on the very channel the business runs on. So a person releases each message, with a last look and the freedom to change it or not send it. The automation takes about ninety percent of the time out of this flow; what is left is the part that should stay human.
 
-The weekly roster was a printed grid no system could parse. No scheduling form was ever going to beat that grid, so I did not replace it: the operator **photographs it and uploads it**. Claude reads the image, detects the week, and proposes the tuk↔driver assignment for every day. The operator reviews and applies — minutes instead of an hour of manual entry, with the human always making the final call.
+<p align="center"><a href="../videos/v2-comms.mp4"><img src="../videos/v2-comms-cover.png" width="720" alt="Watch: Five times a day, a booking was retyped into ChatGPT (1:48)"></a></p>
+<p align="center"><em>▶ <a href="../videos/v2-comms.mp4">Watch the 1:48 walkthrough</a></em></p>
 
-<p align="center">
-  <img src="assets/live-portugal-escala.png" width="38%" alt="Escala — a photo of the schedule grid becomes an editable weekly roster" />
-</p>
-
-## The team, at a glance
-
-Every driver, with live availability ("free now"), the vehicle they're on, and a profile with languages, history, and stats — so assigning the right person takes seconds. 15 drivers across 6 vehicles.
-
-<p align="center">
-  <img src="assets/live-portugal-drivers.png" width="30%" alt="Drivers — live availability" />
-  <img src="assets/live-portugal-driver-perfil.png" width="30%" alt="Driver profile — languages, vehicle, history" />
-</p>
-
-## Messages in six languages — written automatically, sent with one tap
-
-The send queue turns coordination into one tap: a briefing to the day's driver, a D-1 reminder to the client, a D+1 review request after the tour.
-
-<p align="center">
-  <img src="assets/live-portugal-envios.png" width="30%" alt="Envios — the WhatsApp send queue" />
-</p>
-
-Behind the queue, the writing is automatic and the sending is not. n8n reads bookings from Google Calendar, Claude writes a personalised message in the client's language (PT/EN/ES/DE/FR/IT), and the message lands in the queue with the delivery status logged in Supabase.
-
-**Sending is one tap, by design.** Automated delivery from the company's main number risked a ban on the very channel the business runs on, so a person releases each message. That is a deliberate constraint, not a missing feature — the official Meta channel is the next phase.
+<p align="center"><img src="assets/messages-queue.jpg" width="92%" alt="The send queue: D-1 reminders, review requests and driver briefings, each in the client's language, each sent with one tap"></p>
 
 ```
-[Google Calendar] → [n8n · D-1 17:00 / D+1 09:00] → [Claude — message in the client's language]
-                  → [send queue] → 👤 one tap → [WhatsApp Business] → [Supabase — log]
+[Google Calendar] → [n8n · D-1 17:00 / D+1 09:00] → [Claude · message in the client's language]
+                  → [send queue] → 👤 one tap → [WhatsApp Business] → [Supabase · delivery log]
 ```
 
-![The production pipeline in n8n: scheduled trigger → fetch bookings → generate a personalised message with Claude → queue it for WhatsApp Business → log the send.](assets/whatsapp-pipeline.png)
+<p align="center"><img src="assets/whatsapp-messages.png" width="70%" alt="Real messages: the D-1 reminder and the D+1 review request, generated in the client's language. Personal data redacted."></p>
 
-![Automated messages: the D-1 reminder (left) and the D+1 follow-up with review request (right), each generated in the client's language. Personal data redacted.](assets/whatsapp-messages.png)
+### 2 · The weekly schedule · about 3 hours a month back
 
-Multi-tenant from day one: one workflow set serves every operator tenant — a new operator is a database row, not a new deployment.
+This one is not about replacing anyone's judgment. **The managers still build the schedule themselves, every week.** They know who works well with whom, who is back from holiday, who can take the German tour. That was never the problem.
 
-## In their brand, on their phone
+**Before:** the problem was where the schedule lived. Built in a spreadsheet, exported as a picture, posted in the WhatsApp group. And there it stopped: a picture is a dead end, nothing downstream can read it. Every tour assignment meant going back to check who was working.
 
-It installs and runs as a real full-screen app on the operator's smartphone. A single menu holds the operation; integrations (Google Calendar, Stripe, GetYourGuide) and notifications live one screen away.
+**Now:** a screen made for that job. Drag a driver into a day, drag a tuk into a cell, or click and type. One click publishes it as an image to the same WhatsApp group the team always used, and at the same moment it lands inside each driver's own app. Because the schedule became data instead of a picture, everything downstream got easier.
+
+The hours here do not come from building the schedule faster. They come from no longer exporting and sharing by hand, and above all from no longer re-checking the schedule at every assignment.
+
+<p align="center"><a href="../videos/v3-escala.mp4"><img src="../videos/v3-escala-cover.png" width="720" alt="Watch: The schedule stopped being a picture and became data (1:41)"></a></p>
+<p align="center"><em>▶ <a href="../videos/v3-escala.mp4">Watch the 1:41 walkthrough</a></em></p>
 
 <p align="center">
-  <img src="assets/live-portugal-mais.png" width="30%" alt="Mais — the operation menu" />
-  <img src="assets/live-portugal-definicoes.png" width="30%" alt="Definições — integrations and notifications" />
+  <img src="assets/roster-builder.jpg" width="49%" alt="The roster builder: drivers by row, days by column, tuks dragged into cells">
+  <img src="assets/roster-send.jpg" width="49%" alt="One click: the week goes out as an image to the drivers' WhatsApp group and into each driver's app">
 </p>
+
+### 3 · Dispatch and the driver's app · about 4 hours a month back
+
+**Before:** a tour for this afternoon meant opening the schedule to see who was working, working out who already had a tour at that hour, then calling drivers one by one, out in the street, mid-tour, to find out who was actually free. Then typing the briefing.
+
+**Now:** one screen. The system has already read the week the managers built, every tour of the day, who is out on a street tour right now, who is on holiday, and which languages each driver speaks. It shows who can take this one, ranked by language and availability. One click assigns. When the manager dispatches, the driver's phone buzzes and the tour is in his own app: pick-up, time, language. He does not have to ask anyone anything. 128 briefings a month that used to be typed by hand.
+
+Each driver has their own app and sees only their own work. Nothing reaches a driver before the manager dispatches.
+
+<p align="center"><a href="../videos/v4-ops.mp4"><img src="../videos/v4-ops-cover.png" width="720" alt="Watch: A last-minute tour used to mean five phone calls (1:10)"></a></p>
+<p align="center"><em>▶ <a href="../videos/v4-ops.mp4">Watch the 1:10 walkthrough</a></em></p>
+
+<p align="center">
+  <img src="assets/booking-assign.jpg" width="49%" alt="A booking with no driver yet: the detail and the Assign driver action">
+  <img src="assets/driver-picker.jpg" width="49%" alt="The assignment picker: only the drivers rostered that day, ranked by language and availability">
+</p>
+<p align="center">
+  <img src="assets/driver-app-home.jpg" width="30%" alt="The driver's app: today, tomorrow, earnings today and month balance">
+  <img src="assets/driver-app-roster.jpg" width="30%" alt="The driver's week, and the form to request days off">
+</p>
+
+### 4 · The money · about 6 hours a month back
+
+**Before:** each driver's balance lived in a spreadsheet, updated by hand. Each partner hotel's commission was worked out at the end of the month, from the calendar and another spreadsheet. The month-end close took an afternoon.
+
+**Now:** the balance settles as each tour closes: what the driver received, what belongs to the company, what he is owed, at the moment the tour ends. Every partner's commission is calculated as the work happens, and the month-end report is ready without anyone reconciling. The close went from about three and a half hours to half an hour. This layer is plain deterministic code, because it has to be right.
+
+*(Walkthrough video for this task not recorded yet.)*
+
+---
+
+## The seam: nothing is typed twice
+
+The biggest cost was never one task. It was the operation living in tools that did not talk to each other. Every booking is read once. The same data that writes the customer's message later tells the system which driver can take the tour and in which language. The schedule the managers build is what the assignment picker reads. And when the driver closes the tour in his app, his balance closes with it. That is where the interconnection stops being an architecture argument and becomes a productivity one: the time saved by not going back, not re-checking, not rewriting what already exists.
+
+<p align="center"><img src="assets/tours.jpg" width="92%" alt="Every booking in one list, synced from the calendar: time, tour, pax, customer and channel, driver and vehicle, status"></p>
 
 ---
 
 ## What the system does on its own · what it hands back to a person
 
-**On its own:** reads bookings from Google Calendar; reads the weekly-roster photograph and *proposes* driver↔tuk assignments; writes D-1 reminders and D+1 review requests in the client's language and queues them; settles each driver's balance as a tour closes; calculates each partner hotel's commission as the work happens; logs every message and delivery status to Supabase.
+**On its own:** reads bookings from Google Calendar; writes D-1 reminders, D+1 review requests and driver briefings in the client's language and queues them; publishes the schedule the managers built to the group and to each driver's app; proposes the drivers who can take a tour; settles each driver's balance as a tour closes; calculates each partner's commission; logs every message and delivery status.
 
-**Handed back to a person:** **every customer send** — nothing reaches a client without someone tapping; roster assignments, always reviewed before they apply; any cancellation or change request; delivery failures; replies outside expected patterns.
+**Handed back to a person:** **every customer send**, nothing reaches a client without someone tapping; **building the schedule**, always; **who goes**, the dispatch itself; any cancellation or change request; delivery failures; replies outside expected patterns.
 
-The line is deliberate and it is the whole design: agents inform, humans decide direction.
+The line is deliberate and it is the whole design: the machine prepares, the person decides.
+
+---
+
+## Where the model goes, and where it does not
+
+| Layer | What it needs | Here |
+|---|---|---|
+| Structured, rule-shaped data | Deterministic code. No model, no per-event cost, nothing to hallucinate | Balances, commissions, the month-end close, availability |
+| Writing for a human reader | A model generating; a person deciding when it goes out | Customer messages and driver briefings in six languages |
+| Judgment about people | A person, always | Who works when, who takes which tour |
+| Anything that leaves the building | A person, always | WhatsApp sends, dispatch, cancellations |
+
+Multi-tenant from day one: a new operator is a database row, not a deployment.
 
 ---
 
 ## What this demonstrates
 
-Not a demo and not a prototype — the software a business opens every morning, in production every day since May 2026, built and operated by the same person. Most of it is the part operational software usually never reaches: dispatching a field team, the app the worker actually uses, and the money that has to reconcile at the end of the month.
+Not a demo and not a prototype: the software a business opens every morning, in production every day since May 2026, built and operated by the same person. Most of it is the part operational software usually never reaches: dispatching a field team, the app the worker actually uses, and the money that has to reconcile at the end of the month.
 
-It also shows where a model does *not* belong. The roster is read by a model because a photographed grid is genuinely messy input; the balances and commissions are plain deterministic code because they must be right; and the customer send is a human decision because the cost of being wrong is the channel the business runs on.
+It also shows where AI does not belong. The schedule is built by the managers because it is a judgment about people. The balances are plain code because they must be right. The customer send is a human decision because the cost of being wrong is the channel the business runs on.

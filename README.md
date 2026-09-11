@@ -1,36 +1,57 @@
-# Portfolio — Jefferson Alves
+# Portfolio · Jefferson Alves
 
-**Applied AI Engineer** · [orkestra.systems/jefferson](https://orkestra.systems/jefferson)
+**Applied AI Engineer** · Lisbon · [orkestra.systems/jefferson](https://orkestra.systems/jefferson) · [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves)
 
-I build the operational software a business opens every morning — dispatch, the app the field worker uses, and the money that has to reconcile at month end. Each case study below follows the same structure: the **problem**, the **architecture**, what the system does **on its own**, what it **hands back to a person**, and the **measured result**.
+I automate the repetitive work that eats a team's hours, and I measure what comes back. One measure: productivity. I find the task a team repeats most, measure it before touching anything, automate the bulk of it, and leave the final call with a person. Then I measure again. The difference between those two numbers is the work.
 
-> Personal data in the screenshots is redacted. Architecture and results are real, and every number here comes from the running system.
+Every case here follows the same structure: the **task**, the **baseline** measured before anything changed, what the machine **does on its own**, what **stays with a person**, and the **result measured after**. No number without a source.
+
+> Screenshots are from the demo tenant (same software, synthetic names) unless marked otherwise.
 
 ---
 
-## Case studies
+## In production
 
-### 🧭 [Live Portugal — the system that runs the day](case-studies/live-portugal-ai-os.md)
-**In production every day since May 2026.**
-A Lisbon tuk-tuk operator ran the whole day by hand across disconnected tools: bookings in Google Calendar, driver coordination over WhatsApp, the weekly roster on a printed grid taped to a wall, and customer messages typed one at a time in six languages.
+### 🧭 [Live Portugal: the system that runs the day](case-studies/live-portugal-ai-os.md)
 
-No scheduling form was ever going to beat that grid, so I did not replace it — the operator photographs it, Claude reads the image, and it becomes a real, editable schedule. From there the day runs itself: 15 drivers dispatched, each seeing only their own work in an installable phone app; every driver's balance settling as each tour closes; every partner hotel's commission ready at month end; and customer messages written in the right language at the right time, in a queue that sends with one tap.
+**In production every day since May 2026.** A Lisbon tour operator used to build its week by hand in a spreadsheet, export it as a picture and post it in the drivers' WhatsApp group. Bookings lived in a calendar, the accounts in other spreadsheets, and customer reminders were typed one at a time, in six languages.
 
-**Measured:** 6 hours of manual work removed per week · first customer response down from about 2 hours to under 1 minute · 279 of 281 messages delivered (99.3%) across 6 languages · 6,183 bookings synced · 83 driver dispatches across 76 tours.
+Today one system runs that day. The managers still build the week themselves; they build it on a screen made for it and publish it in one click, to the group and into each driver's own app. Assigning a tour no longer means checking who is working. Every driver's balance settles as the day closes, every partner's commission is ready at month end. Customer messages write themselves in the right language at the right time, and sending stays one tap, deliberately.
+
+**Measured (August 2026):** around **20 hours of manual work removed per month** · **414 messages** in six languages, **404 delivered** · **6,499 bookings** synced.
 
 *Full disclosure: I am employed by this company. I built the system it runs on and I use it every day, so I live with its failures.*
 
-`Next.js 15` · `TypeScript` · `Supabase` · `n8n` · `Claude API` · `WhatsApp Business` · `Google Calendar` · `Vision / image-to-data`
+`Next.js 15` · `TypeScript` · `Supabase` · `n8n` · `Claude API` · `WhatsApp Business` · `Google Calendar`
 
-### 📊 [Daily AI Reporting Agent](case-studies/daily-ai-reporting-agent.md)
-**Ran in production from April 2026 until the client engagement ended in August 2026.**
-A paid-media manager in Brazil spent about 40 minutes every morning consolidating ad spend across client accounts. A single scheduled pipeline replaced it: n8n fetches the data, Claude flags anomalies and writes the narrative summary, Telegram delivers it before the working day starts. **About 40 min/day → roughly zero** on routine days. A different client, a different country — the smallest useful shape of automation, and usually the first one a small business needs.
-`n8n` · `Claude API` · `Telegram Bot API` · `Supabase`
+#### Four tasks, four before-and-afters
 
-### 🚦 [Cockpit LX](case-studies/cockpit-lx.md)
-**Pilot ran May–August 2026. Retired.**
-Tuk-tuk drivers in Lisbon were missing demand spikes and reacting late to road restrictions. The tempting build was an AI agent. The correct build was rules over live feeds — maritime traffic, road restrictions, weather, city events — delivered inside Telegram, which the drivers already had. Deterministic, fast, and incapable of inventing a cruise ship that isn't coming. A model appears in exactly one place: filtering noisy news into driver-relevant alerts, where a fixed rule does poorly. **325 alerts delivered (~5/day) and 50 cruise arrivals tracked** during the pilot.
-`n8n` · `Telegram Bot API` · `Telegram Mini App` · `Claude Haiku (filtering only)` · `Real-time data pipelines`
+| Task | Before | After | Back per month | Watch |
+|---|---|---|---|---|
+| **Customer messages** | each booking copied into ChatGPT, pasted into WhatsApp, in six languages | written automatically, sent with one tap | **≈ 6 h** | [▶ 1:48](videos/v2-comms.mp4) |
+| **The weekly schedule** | spreadsheet → picture → WhatsApp group; a dead end | built by the managers on a screen made for it; published in one click; feeds dispatch | **≈ 3 h** | [▶ 1:41](videos/v3-escala.mp4) |
+| **Dispatch and the driver's app** | five phone calls to find who is free; briefings typed by hand | one screen shows who can take it; the driver's app buzzes | **≈ 4 h** | [▶ 1:10](videos/v4-ops.mp4) |
+| **The money** | balances and commissions in spreadsheets; an afternoon to close the month | settles as each tour closes; close in half an hour | **≈ 6 h** | *not recorded yet* |
+
+<p align="center">
+  <a href="videos/v2-comms.mp4"><img src="videos/v2-comms-cover.png" width="32%" alt="Five times a day, a booking was retyped into ChatGPT"></a>
+  <a href="videos/v3-escala.mp4"><img src="videos/v3-escala-cover.png" width="32%" alt="The schedule stopped being a picture and became data"></a>
+  <a href="videos/v4-ops.mp4"><img src="videos/v4-ops-cover.png" width="32%" alt="A last-minute tour used to mean five phone calls"></a>
+</p>
+
+<p align="center">
+  <img src="case-studies/assets/tours.jpg" width="49%" alt="Every booking in one list">
+  <img src="case-studies/assets/roster-builder.jpg" width="49%" alt="The roster builder">
+</p>
+
+---
+
+## Earlier work (retired)
+
+| Project | What it did | Stack | Ran |
+|---|---|---|---|
+| **[Daily AI Reporting Agent](case-studies/daily-ai-reporting-agent.md)** | Daily ad-spend report for a paid-media manager in Brazil: about 40 min of manual reporting a day, cut to roughly zero on routine days | n8n · Claude API · Telegram | Apr–Aug 2026 |
+| **[Cockpit LX](case-studies/cockpit-lx.md)** | Real-time operational alerts for tuk-tuk drivers: rules over live feeds, deliberately no model in the loop except for filtering news | n8n · Telegram Bot & Mini App · real-time feeds | May–Aug 2026 |
 
 ---
 
@@ -38,13 +59,17 @@ Tuk-tuk drivers in Lisbon were missing demand spikes and reacting late to road r
 
 | Layer | What it needs | Example |
 |---|---|---|
-| Structured, rule-shaped data | Deterministic code. No model, no per-event cost, nothing to hallucinate | Cruise arrivals, weather, road restrictions (Cockpit LX) |
-| Interpretation of messy input | A model, with a person reviewing the output | Reading a photographed roster grid; filtering raw news into relevant alerts |
-| Writing for a human reader | A model, generating — but a person deciding when it goes out | D-1 and D+1 customer messages, written automatically, sent with one tap |
-| Anything that leaves the building | A person, always | WhatsApp sends, roster assignments, cancellations |
+| Structured, rule-shaped data | Deterministic code. No model, no per-event cost, nothing to hallucinate | Balances, commissions, cruise arrivals, weather |
+| Writing for a human reader | A model generating; a person deciding when it goes out | Customer messages in six languages, written automatically, sent with one tap |
+| Interpretation of messy input | A model, with a person reviewing the output | Filtering raw news into driver-relevant alerts |
+| Judgment about people, money going out, anything that leaves the building | A person, always | Who works when, who takes which tour, every WhatsApp send |
 
-Knowing which layer needs a model and which needs plain deterministic code is most of the engineering. The principle underneath all three systems is the same: **agents inform, humans decide direction** — and nothing reaches a customer without someone choosing to send it.
+Half the job is saying where AI does not belong: money going out, decisions about people, the reply to an angry customer, anything whose source cannot be traced. Knowing where to stop is what keeps an operation from getting more fragile as it gets more automated.
 
 ---
 
-📫 **Get in touch:** [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [jefferson@orkestra.systems](mailto:jefferson@orkestra.systems)
+## How an engagement starts
+
+A fixed-price productivity diagnostic. I find the task your team repeats most, time it before anything changes, write down what the AI will never touch, automate the bulk of it, and come back at 30 days to measure the difference. You end up with one working automation and a number you can trust, whether or not you continue with me.
+
+📫 [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves) · [jefferson@orkestra.systems](mailto:jefferson@orkestra.systems)
