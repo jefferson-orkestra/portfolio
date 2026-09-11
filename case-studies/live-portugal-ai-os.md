@@ -33,8 +33,8 @@ I measured the operation task by task. Each task below has its own number, and t
 
 **Sending is one tap, on purpose.** An automated send from the company's main number risked a ban on the very channel the business runs on. So a person releases each message, with a last look and the freedom to change it or not send it. The automation takes about ninety percent of the time out of this flow; what is left is the part that should stay human.
 
-<p align="center"><a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v2-comms.mp4"><img src="../videos/v2-comms-cover.png" width="720" alt="Watch: Five times a day, a booking was retyped into ChatGPT (1:48)"></a></p>
-<p align="center"><em>▶ <a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v2-comms.mp4">Watch the 1:48 walkthrough</a></em></p>
+<p align="center"><a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v2-comms.mp4"><img src="../videos/v2-comms-cover.png" width="720" alt="Watch: Five times a day, a booking was retyped into ChatGPT (1:48)"></a></p>
+<p align="center"><em>▶ <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v2-comms.mp4">Watch the 1:48 walkthrough</a></em></p>
 
 <p align="center"><img src="assets/messages-queue.jpg" width="92%" alt="The send queue: D-1 reminders, review requests and driver briefings, each in the client's language, each sent with one tap"></p>
 
@@ -55,8 +55,8 @@ This one is not about replacing anyone's judgment. **The managers still build th
 
 The hours here do not come from building the schedule faster. They come from no longer exporting and sharing by hand, and above all from no longer re-checking the schedule at every assignment.
 
-<p align="center"><a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v3-escala.mp4"><img src="../videos/v3-escala-cover.png" width="720" alt="Watch: The schedule stopped being a picture and became data (1:41)"></a></p>
-<p align="center"><em>▶ <a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v3-escala.mp4">Watch the 1:41 walkthrough</a></em></p>
+<p align="center"><a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v3-escala.mp4"><img src="../videos/v3-escala-cover.png" width="720" alt="Watch: The schedule stopped being a picture and became data (1:41)"></a></p>
+<p align="center"><em>▶ <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v3-escala.mp4">Watch the 1:41 walkthrough</a></em></p>
 
 <p align="center">
   <img src="assets/roster-builder.jpg" width="49%" alt="The roster builder: drivers by row, days by column, tuks dragged into cells">
@@ -71,8 +71,8 @@ The hours here do not come from building the schedule faster. They come from no 
 
 Each driver has their own app and sees only their own work. Nothing reaches a driver before the manager dispatches.
 
-<p align="center"><a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v4-ops.mp4"><img src="../videos/v4-ops-cover.png" width="720" alt="Watch: A last-minute tour used to mean five phone calls (1:10)"></a></p>
-<p align="center"><em>▶ <a href="https://raw.githubusercontent.com/jefferson-orkestra/portfolio/main/videos/v4-ops.mp4">Watch the 1:10 walkthrough</a></em></p>
+<p align="center"><a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v4-ops.mp4"><img src="../videos/v4-ops-cover.png" width="720" alt="Watch: A last-minute tour used to mean five phone calls (1:10)"></a></p>
+<p align="center"><em>▶ <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v4-ops.mp4">Watch the 1:10 walkthrough</a></em></p>
 
 <p align="center">
   <img src="assets/booking-assign.jpg" width="49%" alt="A booking with no driver yet: the detail and the Assign driver action">
