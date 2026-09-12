@@ -89,7 +89,13 @@ Each driver has their own app and sees only their own work. Nothing reaches a dr
 
 **Now:** the balance settles as each tour closes: what the driver received, what belongs to the company, what he is owed, at the moment the tour ends. Every partner's commission is calculated as the work happens, and the month-end report is ready without anyone reconciling. The close went from about three and a half hours to half an hour. This layer is plain deterministic code, because it has to be right.
 
-*(Walkthrough video for this task not recorded yet.)*
+<p align="center"><a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v5-money.mp4"><img src="../videos/v5-money-cover.png" width="720" alt="Watch: Nobody reconciles a spreadsheet at the end of the month (1:03)"></a></p>
+<p align="center"><em>▶ <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v5-money.mp4">Watch the 1:03 walkthrough</a></em></p>
+
+<p align="center">
+  <img src="assets/driver-accounts.jpg" width="49%" alt="A driver's month: bookings, expenses reimbursed, balance, and the movements behind it">
+  <img src="assets/commission-report.jpg" width="49%" alt="A partner hotel's month: tours, total value, commission, net, ready to download">
+</p>
 
 ---
 

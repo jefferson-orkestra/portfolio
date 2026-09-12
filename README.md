@@ -31,12 +31,13 @@ Today one system runs that day. The managers still build the week themselves; th
 | **Customer messages** | each booking copied into ChatGPT, pasted into WhatsApp, in six languages | written automatically, sent with one tap | **≈ 6 h** | [▶ 1:48](https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v2-comms.mp4) |
 | **The weekly schedule** | spreadsheet → picture → WhatsApp group; a dead end | built by the managers on a screen made for it; published in one click; feeds dispatch | **≈ 3 h** | [▶ 1:41](https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v3-escala.mp4) |
 | **Dispatch and the driver's app** | five phone calls to find who is free; briefings typed by hand | one screen shows who can take it; the driver's app buzzes | **≈ 4 h** | [▶ 1:10](https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v4-ops.mp4) |
-| **The money** | balances and commissions in spreadsheets; an afternoon to close the month | settles as each tour closes; close in half an hour | **≈ 6 h** | *not recorded yet* |
+| **The money** | balances and commissions in spreadsheets; an afternoon to close the month | settles as each tour closes; close in half an hour | **≈ 6 h** | [▶ 1:03](https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v5-money.mp4) |
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v2-comms.mp4"><img src="videos/v2-comms-cover.png" width="32%" alt="Five times a day, a booking was retyped into ChatGPT"></a>
   <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v3-escala.mp4"><img src="videos/v3-escala-cover.png" width="32%" alt="The schedule stopped being a picture and became data"></a>
   <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v4-ops.mp4"><img src="videos/v4-ops-cover.png" width="32%" alt="A last-minute tour used to mean five phone calls"></a>
+  <a href="https://cdn.jsdelivr.net/gh/jefferson-orkestra/portfolio@main/videos/v5-money.mp4"><img src="videos/v5-money-cover.png" width="32%" alt="Nobody reconciles a spreadsheet at the end of the month"></a>
 </p>
 
 <p align="center">
