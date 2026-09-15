@@ -17,7 +17,7 @@ Live Portugal runs daily tuk-tuk tours across Lisbon for international clients. 
 
 None of that work needed judgment. It was eating the managers' hours anyway.
 
-The goal was not one automation. It was the software the business opens every morning: one place to run the day, with the machine doing the repetitive part and the people deciding direction.
+The goal was not one automation. It was an AI operating system: the software the business opens every morning, one place to run the day, with the machine doing the repetitive part and the people deciding direction. It started with one question, how to stop typing every reminder by hand, and grew module by module until the whole operation lived in it: bookings, the weekly schedule, dispatch, the drivers' app, the messages, the money. The areas talk to each other because they are the same data.
 
 ---
 

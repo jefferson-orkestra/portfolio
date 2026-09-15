@@ -1,3 +1,5 @@
+<img src="assets/jefferson-round.png" width="96" align="left" alt="Jefferson Alves">
+
 # Portfolio · Jefferson Alves
 
 **Applied AI Engineer** · Lisbon · [orkestra.systems/jefferson](https://orkestra.systems/jefferson) · [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves)
@@ -7,6 +9,8 @@ I build AI operating systems for small businesses: one system for an operation t
 Every case here follows the same structure: the **task**, the **baseline** measured before anything changed, what the machine **does on its own**, what **stays with a person**, and the **result measured after**. No number without a source.
 
 > Screenshots are from the demo tenant (same software, synthetic names) unless marked otherwise.
+
+<br clear="left">
 
 ---
 
