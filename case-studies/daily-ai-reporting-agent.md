@@ -67,4 +67,4 @@ This one delivered without a human tap, and it could: the report went to the cli
 
 ## What this demonstrates
 
-The smallest useful shape of automation: a single agent, external tools, and a scheduled trigger. A different client, a different country, and a small system that gave back real recurring time — usually the first thing a small business actually needs, before anything larger is worth building.
+The smallest useful shape of automation: a single agent, external tools, and a scheduled trigger. A different client, a different country, and a small system that gave back real recurring time — usually the first thing a business actually needs, before anything larger is worth building.
