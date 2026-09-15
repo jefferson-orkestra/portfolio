@@ -2,7 +2,7 @@
 
 **Applied AI Engineer** · Lisbon · [orkestra.systems/jefferson](https://orkestra.systems/jefferson) · [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves)
 
-I automate the repetitive work that eats a team's hours, and I measure what comes back. One measure: productivity. I find the task a team repeats most, measure it before touching anything, automate the bulk of it, and leave the final call with a person. Then I measure again. The difference between those two numbers is the work.
+I build AI operating systems for small businesses: one system for an operation that used to live across tools that never talked to each other. The AI prepares; a person dispatches. One measure: productivity. I find the task a team repeats most, measure it before touching anything, automate the bulk of it, and leave the final call with a person. Then I measure again. The difference between those two numbers is the work.
 
 Every case here follows the same structure: the **task**, the **baseline** measured before anything changed, what the machine **does on its own**, what **stays with a person**, and the **result measured after**. No number without a source.
 
@@ -16,7 +16,7 @@ Every case here follows the same structure: the **task**, the **baseline** measu
 
 **In production every day since May 2026.** A Lisbon tour operator used to build its week by hand in a spreadsheet, export it as a picture and post it in the drivers' WhatsApp group. Bookings lived in a calendar, the accounts in other spreadsheets, and customer reminders were typed one at a time, in six languages.
 
-Today one system runs that day. The managers still build the week themselves; they build it on a screen made for it and publish it in one click, to the group and into each driver's own app. Assigning a tour no longer means checking who is working. Every driver's balance settles as the day closes, every partner's commission is ready at month end. Customer messages write themselves in the right language at the right time, and sending stays one tap, deliberately.
+Today one system runs that day. It started with one question, how to stop typing every reminder by hand, and grew module by module into the system that runs the whole operation. The managers still build the week themselves; they build it on a screen made for it and publish it in one click, to the group and into each driver's own app. Assigning a tour no longer means checking who is working. Every driver's balance settles as the day closes, every partner's commission is ready at month end. Customer messages write themselves in the right language at the right time, and sending stays one tap, deliberately.
 
 **Measured (August 2026):** around **20 hours of manual work removed per month** · **414 messages** in six languages, **404 delivered** · **6,499 bookings** synced.
 
@@ -71,6 +71,6 @@ Half the job is saying where AI does not belong: money going out, decisions abou
 
 ## How an engagement starts
 
-A fixed-price productivity diagnostic. I find the task your team repeats most, time it before anything changes, write down what the AI will never touch, automate the bulk of it, and come back at 30 days to measure the difference. You end up with one working automation and a number you can trust, whether or not you continue with me.
+Fixed price, one to two weeks: **the map and the first module**. I map every tool your operation lives in and every jump between them, find the most expensive jump, time it before anything changes, write down what the AI will never touch, build the first module of the system, and come back at 30 days to measure. You end up with the map, one working module built so the next one fits, and a number you can trust, whether or not you continue with me.
 
 📫 [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves) · [jefferson@orkestra.systems](mailto:jefferson@orkestra.systems)
