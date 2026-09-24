@@ -2,7 +2,7 @@
 
 # Portfolio · Jefferson Alves
 
-**Applied AI Engineer** · Lisbon · [the system](https://orkestra.systems) · [the proof](https://orkestra.systems/jefferson) · [how it starts](https://orkestra.systems/map) · [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves)
+**AI Systems Architect · Founder, Orkestra** · Lisbon · [the system](https://orkestra.systems) · [the proof](https://orkestra.systems/jefferson) · [how it starts](https://orkestra.systems/map) · [LinkedIn](https://www.linkedin.com/in/jefferson-orkestra) · [Upwork](https://www.upwork.com/freelancers/jeffersonalves)
 
 I build AI operating systems for businesses: beyond automations, one system your whole operation runs on. The AI prepares; a person dispatches. One measure: productivity. I find the task a team repeats most, measure it before touching anything, automate the bulk of it, and leave the final call with a person. Then I measure again. The difference between those two numbers is the work.
 
